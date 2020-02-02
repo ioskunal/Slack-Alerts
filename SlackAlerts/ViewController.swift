@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK:- OUTLETS
+
+    @IBOutlet weak var tfMessage: UITextField!
+    @IBOutlet weak var btnSend: UIButton!
+    
+    //MARK:- LIFE CYCLE
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
+    //MARK:- SELF DEFINED
 
+    func sendMessage() {
+        tfMessage.text = ""
+    }
+    
+    //MARK:- ACTION BUTTON
+
+    @IBAction func actionBtnSend(_ sender: Any) {
+        sendMessage()
+    }
 
 }
 
