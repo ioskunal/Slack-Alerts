@@ -35,3 +35,13 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITextFieldDelegate {
+
+    //MARK:- UITEXTFIELD DELEGATE
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sendMessage()
+        return true
+    }
+    
+}
