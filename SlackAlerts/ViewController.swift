@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     //MARK:- SELF DEFINED
 
     func sendMessage() {
+        SlackAlerts.postToSlack(tfMessage.text ?? "")
         tfMessage.text = ""
     }
     
