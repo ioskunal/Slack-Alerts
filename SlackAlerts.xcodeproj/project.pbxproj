@@ -56,15 +56,63 @@
 		6E141FF423E2BF44003C635A /* SlackAlerts */ = {
 			isa = PBXGroup;
 			children = (
-				6E141FF523E2BF44003C635A /* AppDelegate.swift */,
-				6E141FF923E2BF44003C635A /* ViewController.swift */,
-				6E141FFB23E2BF44003C635A /* Main.storyboard */,
-				6E141FFE23E2BF47003C635A /* Assets.xcassets */,
-				6E14200023E2BF47003C635A /* LaunchScreen.storyboard */,
-				6E14200323E2BF47003C635A /* Info.plist */,
-				6EE07F8E23E8902700E27A88 /* SlackAlerts.swift */,
+				6EE07F9523E898B400E27A88 /* Helper */,
+				6EE07F9023E8985D00E27A88 /* MVC */,
+				6EE07F9123E8987500E27A88 /* SupportingFiles */,
 			);
 			path = SlackAlerts;
+			sourceTree = "<group>";
+		};
+		6EE07F9023E8985D00E27A88 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				6EE07F9423E8989200E27A88 /* Model */,
+				6EE07F9323E8988B00E27A88 /* View */,
+				6EE07F9223E8988500E27A88 /* Controller */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		6EE07F9123E8987500E27A88 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6E14200323E2BF47003C635A /* Info.plist */,
+				6E141FF523E2BF44003C635A /* AppDelegate.swift */,
+				6E141FFE23E2BF47003C635A /* Assets.xcassets */,
+				6E14200023E2BF47003C635A /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6EE07F9223E8988500E27A88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EE07F9323E8988B00E27A88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E141FFB23E2BF44003C635A /* Main.storyboard */,
+				6E141FF923E2BF44003C635A /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EE07F9423E8989200E27A88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EE07F9523E898B400E27A88 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6EE07F8E23E8902700E27A88 /* SlackAlerts.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SlackAlerts/Info.plist;
+				INFOPLIST_FILE = SlackAlerts/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,7 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SlackAlerts/Info.plist;
+				INFOPLIST_FILE = SlackAlerts/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
