@@ -28,6 +28,7 @@ struct SlackAlerts {
         var dict = JSON()
         dict["title"] = title
         dict["value"] = message
+        dict["short"] = true
         return dict
     }
 
