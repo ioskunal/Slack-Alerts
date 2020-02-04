@@ -10,4 +10,21 @@ import Foundation
 
 struct APIManager {
 
+    static func postToSlack(_ strURL: String,_ attachments: [JSON]) {
+        
+        var dict = [String: Any]()
+        dict = ["text": "API Response", "attachments": attachments]
+
+        var request = URLRequest(url: URL(string: strURL)!)
+        request.httpMethod = "POST"
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        request.addValue("application/json", forHTTPHeaderField: "Content-type")
+    
+        let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { _, _, _ in })
+        task.resume()
+    }
 }

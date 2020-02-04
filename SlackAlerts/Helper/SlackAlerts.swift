@@ -13,14 +13,15 @@ typealias JSON = [String: Any]
 struct SlackAlerts {
     
     static private var slackWebhook = "SLACK_WEBHOOK_URL"
-    
+
     internal static func postToSlack(_ message: String) {
         var arrFields = [JSON]()
         arrFields.append(getField("App Version", "1.0"))
         arrFields.append(getField("Build Number", "1"))
         let dictAttachment = ["title": message, "fields": arrFields] as [String : Any]
-        print(dictAttachment)
-        // hitAPI
+        var arrAttachments = [JSON]()
+        arrAttachments.append(dictAttachment)
+        APIManager.postToSlack(slackWebhook, arrAttachments)
     }
     
     private static func getField(_ title: String, _ message: String) -> JSON {
