@@ -20,6 +20,19 @@ struct SlackAlerts {
 
         var dictAPI = JSON()
         var arrFields = [JSON]()
+        var arrBlocks = [JSON]()
+        let dictBlock = [
+            "type" : "section",
+            "text" : [
+                "type" : "mrkdwn",
+                "text": "<https://google.com|Google> \n :wink: \n Here is a perfect example of Image, Emoji and Clickable Link"
+            ],
+            "accessory": [
+                "type" : "image",
+                "image_url": "https://cdn4.wpbeginner.com/wp-content/uploads/2015/12/cc0-publicdomain.jpg", "alt_text": "Camera Click"
+            ]
+        ] as JSON
+        arrBlocks.append(dictBlock)
         arrFields.append(getField(title: "App Version", message: appVersion, isShort: true))
         arrFields.append(getField(title: "Build Number", message: buildNumber, isShort: true))
         arrFields.append(getField(title: "Platform", message: "iOS", isShort: true))
@@ -27,7 +40,7 @@ struct SlackAlerts {
         let dictAttachment = ["title": message, "fields": arrFields] as [String : Any]
         var arrAttachments = [JSON]()
         arrAttachments.append(dictAttachment)
-        dictAPI = ["text": text, "attachments": arrAttachments]
+        dictAPI = ["text": text, "attachments": arrAttachments, "blocks": arrBlocks]
         APIManager.postToSlack(slackWebhook, dictAPI)
     }
     
